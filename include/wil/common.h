@@ -13,6 +13,48 @@
 #ifndef __WIL_COMMON_INCLUDED
 #define __WIL_COMMON_INCLUDED
 
+// Definitions for LLVM MinGW support.
+// https://github.com/microsoft/wil/pull/454
+#ifndef _Frees_ptr_
+#define _Frees_ptr_
+#endif
+#ifndef _Frees_ptr_opt_
+#define _Frees_ptr_opt_
+#endif
+#ifndef _Post_z_
+#define _Post_z_
+#endif
+#ifndef _Pre_maybenull_
+#define _Pre_maybenull_
+#endif
+#ifndef _Pre_opt_valid_
+#define _Pre_opt_valid_
+#endif
+#ifndef _Pre_valid_
+#define _Pre_valid_
+#endif
+#ifndef _Ret_opt_bytecap_
+#define _Ret_opt_bytecap_(size)
+#endif
+#ifndef _Translates_last_error_to_HRESULT_
+#define _Translates_last_error_to_HRESULT_
+#endif
+#ifndef _Translates_NTSTATUS_to_HRESULT_
+#define _Translates_NTSTATUS_to_HRESULT_(status)
+#endif
+#ifndef _Translates_Win32_to_HRESULT_
+#define _Translates_Win32_to_HRESULT_(err)
+#endif
+#ifndef InterlockedDecrementNoFence
+#define InterlockedDecrementNoFence InterlockedDecrement
+#endif
+#ifndef InterlockedIncrementNoFence
+#define InterlockedIncrementNoFence InterlockedIncrement
+#endif
+#ifndef WIL_NO_SLIM_EVENT
+#define WIL_NO_SLIM_EVENT
+#endif
+
 #if defined(_KERNEL_MODE) && !defined(__WIL_MIN_KERNEL)
 // This define indicates that the WIL usage is in a kernel mode context where
 // a high degree of WIL functionality is desired.
